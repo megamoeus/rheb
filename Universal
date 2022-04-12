@@ -1,0 +1,38 @@
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("REC Hub", "DarkTheme")
+
+    -- Player
+    local Player = Window:NewTab("Player Options")
+    local PlayerSection = Player:NewSection("Universal Player Options")
+
+    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+    PlayerSection:NewButton("Kill", "Kills Yourself", function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end)
+    
+    PlayerSection:NewButton("God", "Gods Yourself", function()
+        local function Invincibility()
+            if LocalPlayer.Character then
+                for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+                    if v.Name == "hitbox" then
+                        v:Destroy()
+                    end
+                end
+            end
+        end
+    end)
+
+    local Miscellaneous = Player:NewSection("Miscellaneous")
+
+
+    Miscellaneous:NewButton("Show Health Development Purposes", "Shows Health in F9", function()
+        print(game.Players.LocalPlayer.Character.Humanoid.Health)
+    end)
