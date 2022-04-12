@@ -1,0 +1,43 @@
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("REC Hub", "DarkTheme")
+
+    
+-- Player
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("Player Options")
+
+
+        PlayerSection:NewToggle("Phantom Forces Walkspeed", "No Discription.", function(v)
+        getgenv().buybelts = v
+        while wait() do
+            if not getgenv().buybelts then return end
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 1000
+                    wait(1)
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
+                end
+        end)
+
+    PlayerSection:NewToggle("AutoJump", "Changes the jumppower", 250, 50, function(v)
+        getgenv().buybelts = v
+        while wait() do
+        if not getgenv().buybelts then return end
+        game.Players.LocalPlayer.Character.Humanoid.Jump = true
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 1000
+        wait(1)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
+        end
+    end)
+
+    PlayerSection:NewButton("Kill", "Kills Yourself", function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end)
+    
+    -- Miscellaneous
+    local Misc = Window:NewTab("Misc")
+    local Miscellaneous = Player:NewSection("Miscellaneous")
+
+
+    Miscellaneous:NewButton("Show Health Development Purposes", "Shows Health in F9", function()
+        print(game.Players.LocalPlayer.Character.Humanoid.Health)
+    end)
+    
