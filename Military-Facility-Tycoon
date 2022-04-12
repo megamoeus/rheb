@@ -35,13 +35,14 @@
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
     end)
     
+    
+    
     -- Miscellaneous
     local Misc = Window:NewTab("Misc")
-    local Miscellaneous = Player:NewSection("Miscellaneous")
+    local Miscellaneous = Misc:NewSection("Miscellaneous")
 
 
     Miscellaneous:NewButton("Show Health Development Purposes", "Shows Health in F9", function()
         print(game.Players.LocalPlayer.Character.Humanoid.Health)
     end)
 
-end
