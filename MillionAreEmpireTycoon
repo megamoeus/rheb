@@ -1,0 +1,42 @@
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("REC Hub", "DarkTheme")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+
+    MainSection:NewButton("Give Money", "Gives Money", function()
+        game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
+    end)
+    
+    MainSection:NewToggle("Money Loop", "Loop Gives Money", function(v)
+     getgenv().buybelts = v
+        while wait() do
+            if not getgenv().buybelts then return end
+            game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
+                end
+    end)
+    
+    MainSection:NewButton("Remove Money", "Gives Money", function()
+        game:GetService("ReplicatedStorage").RespawnService:FireServer(-9e17)
+    end)
+    
+    
+    
+    -- PLAYER
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("PlayerOptions")
+
+    PlayerSection:NewSlider("Walkspeed", "Changes your walkspeed", 1250, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+
+    PlayerSection:NewSlider("Jumppower", "Changes your jumppower", 1250, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+    
+    PlayerSection:NewButton("Kill", "Kills Yourself", function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+    end)
+    
