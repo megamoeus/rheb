@@ -11,9 +11,9 @@
         getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
-                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 1000
-                    wait(1)
-                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 500
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 2000
+                    wait(5)
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 1500
                 end
         end)
 
