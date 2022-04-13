@@ -29,7 +29,9 @@
             end
         end
     end)
+     -- misc
 
+    local Misc = Window:NewTab("Misc")
     local Miscellaneous = Player:NewSection("Miscellaneous")
 
 
