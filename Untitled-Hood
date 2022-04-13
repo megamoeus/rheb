@@ -3,21 +3,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("REC Hub", "DarkTheme")
 local Tab = Window:NewTab("Money Options")
-local Section = Tab:NewSection("Money Stuff")
-
-
-function Buy(Object)
-    local Object = Object
-    local LockPicker = Workspace.Ignored.Shop[Object]
-    Character.HumanoidRootPart.CFrame = LockPicker.Head.CFrame + Vector3.new(0, 3, 0)
-    wait(0.5)
-    fireclickdetector(LockPicker.ClickDetector)
-    fireclickdetector(LockPicker.ClickDetector)
-end
-
-Buy("[Revolver] - $1300")
-
-wait(3)
+local Section = Tab:NewSection("Get A Revolver")
 
 local player = game.Players.LocalPlayer
 
