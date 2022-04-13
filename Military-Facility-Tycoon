@@ -7,14 +7,14 @@
     local MainSection = Main:NewSection("Money Options")
     
             MainSection:NewButton("Give Money", "Gives Money", function()
-        game.ReplicatedStorage.EnterCode:FireServer(752165215)
+        game.ReplicatedStorage.EnterCode:FireServer(7521242141241242465215165215)
     end)
     
         MainSection:NewToggle("Money Loop", "Loop Gives Money", function(v)
         getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
-            game.ReplicatedStorage.EnterCode:FireServer(752165215)
+            game.ReplicatedStorage.EnterCode:FireServer(7521242141241242465215)
                 end
         end)
     
