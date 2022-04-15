@@ -7,7 +7,7 @@
     local MainSection = Main:NewSection("Dupes")
 
 
-        MainSection:NewToggle("Dupe 1", "Turn on for 12 seconds then turn off in trade menu", function(v)
+        MainSection:NewToggle("Dupe 1-- Turn on for 12 seconds then turn off in trade menu", "Turn on for 12 seconds then turn off in trade menu", function(v)
         getgenv().buybelts = v
         while wait() do
         if not getgenv().buybelts then return end
