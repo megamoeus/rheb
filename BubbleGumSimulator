@@ -2,8 +2,8 @@
     local Window = Library.CreateLib("REC Hub", "BloodTheme")
 
     
--- Player
-    local main = Window:NewTab("Dupe")
+-- Main
+    local Main = Window:NewTab("Dupe")
     local Section = Main:NewSection("Duping Options")
 
 
