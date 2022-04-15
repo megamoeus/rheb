@@ -1,13 +1,13 @@
     local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("REC Hub", "BloodTheme")
+    local Window = Library.CreateLib("REC HUB- Bubble Gum Simulator", "Sentinel")
 
     
--- Main
-    local Main = Window:NewTab("Main")
-    local MainSection = Main:NewSection("Main")
+-- Player
+    local Main = Window:NewTab("Dupe Options")
+    local MainSection = Main:NewSection("Dupes")
 
 
-        MainSection:NewToggle("Dupe Stuff", "Turn on for 12 seconds then turn off in trade menu", function(v)
+        MainSection:NewToggle("Dupe 1", "Turn on for 12 seconds then turn off in trade menu", function(v)
         getgenv().buybelts = v
         while wait() do
         if not getgenv().buybelts then return end
