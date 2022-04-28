@@ -1,0 +1,60 @@
+    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("REC Hub", "Sentinel")
+
+    -- MAIN
+    local Main = Window:NewTab("Main")
+    local MainSection = Main:NewSection("Main")
+
+    MainSection:NewToggle("Auto Click", "Auto Clicks for you", function(v)
+     getgenv().buybelts = v
+        while wait() do
+            if not getgenv().buybelts then return end
+            game.ReplicatedStorage.Events.ClickEvent:FireServer()
+        end
+    end)
+    
+    
+    
+    
+    
+    -- PLAYER
+    local Player = Window:NewTab("Player")
+    local PlayerSection = Player:NewSection("PlayerOptions")
+
+    PlayerSection:NewButton("Tp to Desert", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-942.0883178710938, 36.64857864379883, -7.733408451080322)
+    end)
+    
+    PlayerSection:NewButton("Tp to Ocean", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-942.0883178710938, 36.64857864379883, -7.733408451080322)
+    end)
+    
+    PlayerSection:NewButton("Tp to Forest", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.3184204101562, 112.55392456054688, 1183.0670166015625)
+    end)
+    
+    PlayerSection:NewButton("Tp to Toy", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-875.073486328125, 47.53366470336914, 732.79736328125)
+    end)
+    
+    PlayerSection:NewButton("Tp to Snowy", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-548.911376953125, 150.3311767578125, -657.4548950195312)
+    end)
+    
+    PlayerSection:NewButton("Tp to Actually Toy", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.74625778198242, 128.51651000976562, -885.9248657226562)
+    end)
+    
+    PlayerSection:NewButton("Tp to Volcano", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(939.7684936523438, 32.61008071899414, 5.947694778442383)
+    end)
+    
+    PlayerSection:NewButton("Tp to Space", "Tps", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(601.5283813476562, 36.11521911621094, 780.8958129882812)
+    end)
+    
+    PlayerSection:NewButton("Tp to Actually Ocean", "Tps", function()
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4.472873687744141, 67.49369812011719, 879.6165161132812)
+    end)
+    
+    
