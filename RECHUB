@@ -1,9 +1,15 @@
+--[[
+
+RECHUB
+
+All rights reserved
+
+--]]
+
 if game.PlaceId == 6677985923 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/MillionAreEmpireTycoon"))()
 elseif game.PlaceId == 4995336733 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/Military-Facility-Tycoon"))()
-elseif game.PlaceId == 7800644383 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/Untitled-Hood"))()
 elseif game.PlaceId == 292439477 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/Phantom-Forces"))()
 elseif game.PlaceId == 5622540109 then
