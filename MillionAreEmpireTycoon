@@ -104,29 +104,3 @@ plr:Button(
 
 
 
-textbs:Textbox(
-    "Gun power",
-    "Type here!",
-    true,
-    function(t)
-        print(t)
-    end
-)
-
-local lbls = serv:Channel("Labels")
-
-lbls:Label("This is just a label.")
-
-local bnds = serv:Channel("Binds")
-
-bnds:Bind(
-    "Kill bind",
-    Enum.KeyCode.RightShift,
-    function()
-        print("Killed everyone!")
-    end
-)
-
-serv:Channel("by dawid#7205")
-
-win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
