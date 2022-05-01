@@ -115,12 +115,3 @@ plr:Button(
 
 
 
-
-textbs:Textbox(
-    "Gun power",
-    "Type here!",
-    true,
-    function(t)
-        print(t)
-    end
-)
