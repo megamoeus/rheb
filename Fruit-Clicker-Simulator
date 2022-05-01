@@ -22,7 +22,7 @@ btns:Toggle(
 btns:Seperator()
 
 
-local tps = serv:Channel("Auto Farm Options")
+local tps = serv:Channel("Teleport Options")
 
 
 
