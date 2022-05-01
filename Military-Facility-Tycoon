@@ -50,6 +50,7 @@ local sldr =
     0,
     function(t)
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+        
     end
 )
 
@@ -69,6 +70,7 @@ plr:Button(
     "Reset Walkspeed",
     function()
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        DiscordLib:Notification("Notification", "WalkSpeed Resetted", "Okay!")
     end
 )
 
@@ -76,6 +78,7 @@ plr:Button(
     "Reset JumpPower",
     function()
         game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        DiscordLib:Notification("Notification", "JumpPower Resetted", "Okay!")
     end
 )
 
@@ -84,6 +87,7 @@ plr:Button(
     "Die",
     function()
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        DiscordLib:Notification("Notification", "Killed", "Okay!")
     end
 )
 
