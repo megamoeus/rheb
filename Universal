@@ -1,40 +1,59 @@
-    local LocalPlayer = game:GetService("Players").LocalPlayer
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("REC Hub", "Sentinel")
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-    -- Player
-    local Player = Window:NewTab("Player Options")
-    local PlayerSection = Player:NewSection("Universal Player Options")
+local win = DiscordLib:Window("REC HUB -- Universal")
 
-    PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 250, 16, function(v)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-    end)
+local serv = win:Server("Main", "")
 
-    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 250, 50, function(v)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-    end)
+local btns = serv:Channel("Universal Options")
 
-    PlayerSection:NewButton("Kill", "Kills Yourself", function()
+
+
+    btns:Slider(
+    "Walkspeed Changer",
+    0,
+    1000,
+    0,
+    function(t)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+        
+    end
+)
+
+    btns:Slider(
+    "JumpPower Changer",
+    0,
+    1000,
+    0,
+    function(e)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = e
+    end
+)
+
+btns:Button(
+    "Reset Walkspeed",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        DiscordLib:Notification("Notification", "WalkSpeed Resetted", "Okay!")
+    end
+)
+
+btns:Button(
+    "Reset JumpPower",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        DiscordLib:Notification("Notification", "JumpPower Resetted", "Okay!")
+    end
+)
+
+
+btns:Button(
+    "Die",
+    function()
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
-    end)
-    
-    PlayerSection:NewButton("God", "Gods Yourself", function()
-        local function Invincibility()
-            if LocalPlayer.Character then
-                for i, v in pairs(LocalPlayer.Character:GetChildren()) do
-                    if v.Name == "hitbox" then
-                        v:Destroy()
-                    end
-                end
-            end
-        end
-    end)
-     -- misc
-
-    local Misc = Window:NewTab("Misc")
-    local Miscellaneous = Player:NewSection("Miscellaneous")
+        DiscordLib:Notification("Notification", "Killed", "Okay!")
+    end
+)
 
 
-    Miscellaneous:NewButton("Show Health Development Purposes", "Shows Health in F9", function()
-        print(game.Players.LocalPlayer.Character.Humanoid.Health)
-    end)
+
