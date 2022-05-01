@@ -29,6 +29,20 @@ btns:Toggle(
         game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
         end
     end)
+    
+    
+    btns:Toggle(
+    "Auto Rebirth",
+    false,
+    function(v)
+            getgenv().buybelts = v
+        while wait() do
+            if not getgenv().buybelts then return end
+        game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-127.64231872558594, 3.7566967010498047, 111.04661560058594)
+        game:GetService("ReplicatedStorage").rebirthEvent:FireServer()
+        end
+    end)
 
 
 btns:Button(
