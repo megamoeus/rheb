@@ -1,32 +1,23 @@
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("REC Hub", "Sentinel")
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-    
--- Player
-    local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("Player Options")
+local win = DiscordLib:Window("REC HUB -- Phantom Forces")
 
+local serv = win:Server("Bypassing Options", "")
 
-        PlayerSection:NewToggle("Phantom Forces Walkspeed", "Makes You go at the speed of light withount being detected", function(v)
-        getgenv().buybelts = v
+local btns = serv:Channel("Legit Options")
+
+btns:Toggle(
+    "Phantom Forces Walkspeed",
+    false,
+    function(v)
+            getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
                     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 5000
                     wait(5)
                     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 3000
-                end
-        end)
-
-    PlayerSection:NewButton("Kill", "Kills Yourself", function()
-        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        end
     end)
-    
-    -- Miscellaneous
-    local Misc = Window:NewTab("Misc")
-    local Miscellaneous = Misc:NewSection("Miscellaneous")
 
 
-    Miscellaneous:NewButton("Show Health Development Purposes", "Shows Health in F9", function()
-        print(game.Players.LocalPlayer.Character.Humanoid.Health)
-    end)
-  
