@@ -1,42 +1,132 @@
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("REC Hub", "Sentinel")
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-    -- MAIN
-    local Main = Window:NewTab("Main")
-    local MainSection = Main:NewSection("Main")
+local win = DiscordLib:Window("REC HUB -- MillionAreEmpireTycoon")
 
+local serv = win:Server("Main", "")
 
-    MainSection:NewButton("Give Money", "Gives Money", function()
+local btns = serv:Channel("Money Options")
+
+btns:Button(
+    "Give Money",
+    function()
         game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
-    end)
-    
-    MainSection:NewToggle("Money Loop", "Loop Gives Money", function(v)
-     getgenv().buybelts = v
+        DiscordLib:Notification("Notification", "Money Given", "Okay!")
+    end
+)
+
+
+btns:Seperator()
+
+
+btns:Toggle(
+    "Loop Give Money",
+    false,
+    function(v)
+            getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
-            game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
-                end
+        game:GetService("ReplicatedStorage").RespawnService:FireServer(7521652150)
+        end
     end)
-    
-    MainSection:NewButton("Remove Money", "Gives Money", function()
+
+
+btns:Button(
+    "Remove Money",
+    function()
         game:GetService("ReplicatedStorage").RespawnService:FireServer(-9e17)
-    end)
-    
-    
-    
-    -- PLAYER
-    local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("PlayerOptions")
+        DiscordLib:Notification("Notification", "Money Removed", "Okay!")
+    end
+)
 
-    PlayerSection:NewSlider("Walkspeed", "Changes your walkspeed", 1250, 16, function(v)
-        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
-    end)
+    btns:Textbox(
+    "Money Amount",
+    "Type here! Amount You wish to get.",
+    true,
+    function(t)
+        game:GetService("ReplicatedStorage").RespawnService:FireServer(t)
+    end
+)
 
-    PlayerSection:NewSlider("Jumppower", "Changes your jumppower", 1250, 50, function(v)
-        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
-    end)
-    
-    PlayerSection:NewButton("Kill", "Kills Yourself", function()
+local serve = win:Server("Player", "")
+
+local plr = serve:Channel("Player Options")
+
+local sldr =
+    plr:Slider(
+    "Walkspeed Changer",
+    0,
+    1000,
+    0,
+    function(t)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+        
+    end
+)
+
+
+local sldr =
+    plr:Slider(
+    "JumpPower Changer",
+    0,
+    1000,
+    0,
+    function(e)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = e
+    end
+)
+
+plr:Button(
+    "Reset Walkspeed",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        DiscordLib:Notification("Notification", "WalkSpeed Resetted", "Okay!")
+    end
+)
+
+plr:Button(
+    "Reset JumpPower",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        DiscordLib:Notification("Notification", "JumpPower Resetted", "Okay!")
+    end
+)
+
+
+plr:Button(
+    "Die",
+    function()
         game.Players.LocalPlayer.Character.Humanoid.Health = 0
-    end)
-    
+        DiscordLib:Notification("Notification", "Killed", "Okay!")
+    end
+)
+
+
+
+
+textbs:Textbox(
+    "Gun power",
+    "Type here!",
+    true,
+    function(t)
+        print(t)
+    end
+)
+
+local lbls = serv:Channel("Labels")
+
+lbls:Label("This is just a label.")
+
+local bnds = serv:Channel("Binds")
+
+bnds:Bind(
+    "Kill bind",
+    Enum.KeyCode.RightShift,
+    function()
+        print("Killed everyone!")
+    end
+)
+
+serv:Channel("by dawid#7205")
+
+win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")
