@@ -1,60 +1,126 @@
-    local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-    local Window = Library.CreateLib("REC Hub", "Sentinel")
+local DiscordLib =
+    loadstring(game:HttpGet "https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/discord")()
 
-    -- MAIN
-    local Main = Window:NewTab("Main")
-    local MainSection = Main:NewSection("Main")
+local win = DiscordLib:Window("REC HUB -- Fruit-Clicker-Simulator")
 
-    MainSection:NewToggle("Auto Click", "Auto Clicks for you", function(v)
-     getgenv().buybelts = v
+local serv = win:Server("Main", "")
+
+local btns = serv:Channel("Auto Farm Options")
+
+
+btns:Toggle(
+    "Auto Click",
+    false,
+    function(v)
+            getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
-            game.ReplicatedStorage.Events.ClickEvent:FireServer()
+        game.ReplicatedStorage.Events.ClickEvent:FireServer()
         end
     end)
-    
-    
-    
-    
-    
-    -- PLAYER
-    local Player = Window:NewTab("Player")
-    local PlayerSection = Player:NewSection("PlayerOptions")
 
-    PlayerSection:NewButton("Tp to Desert", "Tps", function()
+btns:Seperator()
+
+
+local tps = serv:Channel("Auto Farm Options")
+
+
+
+tps:Button("Tp to Desert",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-942.0883178710938, 36.64857864379883, -7.733408451080322)
-    end)
-    
-    PlayerSection:NewButton("Tp to Ocean", "Tps", function()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-942.0883178710938, 36.64857864379883, -7.733408451080322)
-    end)
-    
-    PlayerSection:NewButton("Tp to Forest", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+tps:Button("Tp to Forest",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-520.3184204101562, 112.55392456054688, 1183.0670166015625)
-    end)
-    
-    PlayerSection:NewButton("Tp to Toy", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+tps:Button("Tp to Toy",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-875.073486328125, 47.53366470336914, 732.79736328125)
-    end)
-    
-    PlayerSection:NewButton("Tp to Snowy", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+tps:Button("Tp to Snowy",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-548.911376953125, 150.3311767578125, -657.4548950195312)
-    end)
-    
-    PlayerSection:NewButton("Tp to Actually Toy", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+tps:Button("Tp to Actually Toy",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-53.74625778198242, 128.51651000976562, -885.9248657226562)
-    end)
-    
-    PlayerSection:NewButton("Tp to Volcano", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+
+tps:Button("Tp to Volcano",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(939.7684936523438, 32.61008071899414, 5.947694778442383)
-    end)
-    
-    PlayerSection:NewButton("Tp to Space", "Tps", function()
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+tps:Button("Tp to Space",function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(601.5283813476562, 36.11521911621094, 780.8958129882812)
-    end)
-    
-    PlayerSection:NewButton("Tp to Actually Ocean", "Tps", function()
-       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4.472873687744141, 67.49369812011719, 879.6165161132812)
-    end)
-    
-    
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+
+tps:Button("Tp to Actually Ocean",function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4.472873687744141, 67.49369812011719, 879.6165161132812)
+        DiscordLib:Notification("Notification", "Tped", "Okay!")
+end)
+
+local serve = win:Server("Player", "")
+
+local plr = serve:Channel("Player Options")
+
+local sldr = plr:Slider("Walkspeed Changer", 0, 1000, 0, function(t)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+end)
+
+
+local sldr =
+    plr:Slider(
+    "JumpPower Changer",
+    0,
+    1000,
+    0,
+    function(e)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = e
+    end
+)
+
+plr:Button(
+    "Reset Walkspeed",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+        DiscordLib:Notification("Notification", "WalkSpeed Resetted", "Okay!")
+    end
+)
+
+plr:Button(
+    "Reset JumpPower",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+        DiscordLib:Notification("Notification", "JumpPower Resetted", "Okay!")
+    end
+)
+
+
+plr:Button(
+    "Die",
+    function()
+        game.Players.LocalPlayer.Character.Humanoid.Health = 0
+        DiscordLib:Notification("Notification", "Killed", "Okay!")
+    end
+)
+
+
+
+
+textbs:Textbox(
+    "Gun power",
+    "Type here!",
+    true,
+    function(t)
+        print(t)
+    end
+)
