@@ -14,9 +14,9 @@ btns:Toggle(
             getgenv().buybelts = v
         while wait() do
             if not getgenv().buybelts then return end
-                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 5000
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 5555
                     wait(5)
-                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 3000
+                    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 4545
         end
     end)
 
