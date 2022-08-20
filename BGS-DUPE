@@ -1,0 +1,15 @@
+function Death()
+        spawn(function()
+local args = {
+    [1] = "GetPlayerData"
+}
+
+game:GetService("ReplicatedStorage").NetworkRemoteFunction:InvokeServer(unpack(args))
+end)
+end
+
+   for i=1,2500 do
+        spawn(function()
+            Death() 
+        end)
+   end
