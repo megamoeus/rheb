@@ -18,6 +18,8 @@ elseif game.PlaceId == 3851622790 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/UI-Engine-V2/main/num2"))()
 elseif game.PlaceId == 4620170611 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/UI-Engine-V2/main/num2"))()
+elseif game.PlaceId == 2512643572 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/BGS-DUPE"))()
 else
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/Universal"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/rheb/main/Universal"))()
 end
