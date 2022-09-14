@@ -1,0 +1,307 @@
+local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Stebulous/solaris-ui-lib/main/source.lua", true))()
+local win = SolarisLib:New({ 
+    Name = "RECHUB BREAKIN VERSION 1.5.7", 
+    FolderToSave = "SolarisLibStuff"
+})
+ 
+local gmee = win:Tab("Free Gamepasses")
+local tabe = win:Tab("Items")
+local TPE = win:Tab("Location Teleport")
+local MainE = win:Tab("Misc")
+local Maie = win:Tab("OP!")
+ 
+local gme = gmee:Section("Free Gamepasses")
+local tab = tabe:Section("Items")
+local TP = TPE:Section("Location Teleport")
+local Main = MainE:Section("Misc")
+local Mai = Maie:Section("Location Teleport")
+
+
+tab:Button("Enable ToolDrop !Bugged!", function()
+        while wait(1) do
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then
+                v.CanBeDropped = true
+            end
+        end
+    end
+end)
+
+
+tab:Button("Give Apple", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Apple")
+end)
+
+tab:Button("Give BloxyCola", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("BloxyCola")
+end)
+
+tab:Button("Expired Bloxy Cola", function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("ExpiredBloxyCola")
+end)
+
+tab:Button("Give Cooke", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cookie")
+end)
+
+tab:Button("Give Pizza", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Pizza2")
+end)
+
+tab:Button("Give Lolipop", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Lollipop")
+end)
+
+tab:Button("Give Chips", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Chips")
+end)
+
+tab:Button("Give Cure", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Cure")
+end)
+
+tab:Button("Give Plank", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Plank")
+end)
+
+tab:Button("Give Medkit", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("MedKit")
+end)
+
+tab:Button("Give Sword", function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("LinkedSword")
+end)
+
+tab:Button("Hammer", function()
+    local A_1 = true
+    local A_2 = "Hammer"
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.BasementWeapon
+    Event:FireServer(A_1, A_2)
+end)
+
+tab:Button("Give TeddyBloxPin", function()
+    game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("TeddyBloxpin")
+end)
+
+tab:Button("Get Ladder", function()
+    local A_1 = 1
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.Ladder
+    Event:FireServer(A_1)
+end)
+
+Main:Button("Befriend Cat", function()
+    local Target = game:GetService("ReplicatedStorage").RemoteEvents.Cattery;
+    Target:FireServer();
+end)
+
+Main:Button("Heal All", function()
+            for i,v in pairs(game:GetService("Players"):GetChildren()) do
+    
+            game:GetService("ReplicatedStorage").RemoteEvents.CurePlayer:FireServer(v)
+            game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(v)
+     end
+end)
+
+Main:Button("Remove Tools", function()
+             for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+         if v:IsA("Tool") then
+              v:Destroy()
+         end
+        end
+end)
+
+Main:Button("Insta Heal", function()
+           for i = 1, 200 do
+        
+            local A_1 = "Cat"
+            local Event = game:GetService("ReplicatedStorage").RemoteEvents.Energy
+            Event:FireServer(A_1)
+    
+        end
+end)
+
+
+Main:Button("Kill Enemies (Massive Lag)", function()
+    for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+        for i = 1, 50 do
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,10)
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,996)
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,9)
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,8)
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,996)
+            end
+       end
+    end)
+
+    Main:Button("Kill Enemies (Recommended)", function()
+        while wait() do 
+        for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+            game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v, 8)
+        end
+    end
+    end)
+
+    Main:Button("Basement Lights", function()
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.BasementMission
+        Event:FireServer()
+
+        local Event = game:GetService("ReplicatedStorage").RemoteFunctions.GetAmbient
+        Event:InvokeServer()
+    end)
+
+    Main:Button("Basement Key", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Key")
+    end)
+
+
+    Main:Button("Unlock Basement", function()
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.UnlockDoor
+        Event:FireServer()
+    end)
+
+    Main:Button("Find Safe", function()
+    
+        local A_1 = "http://www.roblox.com/asset/?id=3246691515"
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.PaintingClicked
+        Event:FireServer(A_1)
+        
+        local A_1 = "rbxassetid://319s5645674"
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.PaintingClicked
+        Event:FireServer(A_1)
+        
+        local A_1 = "http://www.roblox.com/asset/?id=363240671"
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.PaintingClicked
+        Event:FireServer(A_1)
+        
+        local A_1 = "http://www.roblox.com/asset/?id=178210631"
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.PaintingClicked
+        Event:FireServer(A_1)
+        
+        local A_1 = "rbxassetid://3195645922"
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.PaintingClicked
+        Event:FireServer(A_1)
+        
+            end)
+
+    Main:Button("Open Safe", function()
+        if workspace:findFirstChild("CodeNote") then
+            game.ReplicatedStorage.RemoteEvents.Safe:FireServer(game:GetService("Workspace").CodeNote.SurfaceGui.TextLabel.Text)
+    
+        end
+    end)
+
+Main:Button("Safe Code", function()
+    if workspace:findFirstChild("CodeNote") then
+    game.ReplicatedStorage.RemoteEvents.Safe:FireServer(workspace.CodeNote.SurfaceGui.TextLabel.Text)
+
+    end
+end)
+
+
+Main:Button("FullBright", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/UI-Engine-V2/main/shh", true))()
+end)
+
+local slider = Main:Slider("WalkSpeed", 16,500,0,2.5,"Changes Speed", function(t)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+end)
+
+local slidere = Main:Slider("JumpPower",50,500,0,2.5,"Changes JumpPower", function(t)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = t
+ end)
+
+TP:Button("Teleport To House", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36, 3, -200)
+end)
+
+TP:Button("Teleport To Basement", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -15, -163)
+end)
+
+TP:Button("Teleport To Attic", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16, 35, -220)
+end)
+
+TP:Button("Teleport To Store", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-422, 3, -121)
+end)
+
+TP:Button("Teleport To Sewer", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(129, 3, -125)
+end)
+
+TP:Button("Teleport To Boss Room", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39, -287, -1480)
+end)
+
+Mai:Button("Final Ending", function()
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+        Title = "Notification";
+        Text = "Giving key...";
+        Icon = "rbxassetid://3042225189";
+    })
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.GetKeys
+    Event:FireServer()
+end)
+
+local toggle = Mai:Toggle("God Mode", false,"Makes you have pro gamer health", function(t)
+	getgenv().buybelts = T
+	    while wait() do
+        if not getgenv().buybelts then return end
+        game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer(table.unpack({[1] = 15, [2] = "Apple",}))
+        game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("Apple")
+    end
+end)
+
+Mai:Button("Kill All", function()
+            for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                game:GetService("ReplicatedStorage").RemoteEvents.ToxicDrown:FireServer(table.unpack({[1] = 1, [2] = v,}))
+     end
+end)
+
+gme:Label("Wont Work when in game")
+
+gme:Button("Bat", function()
+    local A_1 = "Bat"
+    local A_2 = false
+    local A_3 = false
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.MakeRole
+    Event:FireServer(A_1, A_2, A_3)
+end)
+
+gme:Button("Medic", function()
+    local A_1 = "MedKit"
+    local A_2 = false
+    local A_3 = false
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.MakeRole
+    Event:FireServer(A_1, A_2, A_3)
+end)
+
+gme:Button("Swat", function()
+    local A_1 = "SwatGun"
+    local A_2 = true
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
+gme:Button("Police", function()
+    local A_1 = "Gun"
+    local A_2 = true
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
+gme:Button("Guest", function()
+    local A_1 = "LinkedSword"
+    local A_2 = false
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
+gme:Button("Hyper", function()
+    local A_1 = "Lollipop"
+    local A_2 = false
+    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+    Event:FireServer(A_1, A_2)
+end)
+
