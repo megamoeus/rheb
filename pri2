@@ -1,0 +1,5 @@
+for _,v in next, game.Players.LocalPlayer.Backpack:GetChildren() do
+          local idk = require(v["ACS_Modulo"].Variaveis.Settings)
+          idk.FireRate = 0
+          idk.Ammo = math.huge
+end
