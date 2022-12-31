@@ -1,4 +1,4 @@
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/ui-libraries/main/drawing/void/source.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/Aimbot/main/RiseOfNationsGuiLib"))()
 
 local watermark = library:Watermark("Rise Of Nations | 60 fps | v4.20 | dev")
 getgenv().SellElectronics = false
